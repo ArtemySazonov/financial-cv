@@ -2,6 +2,9 @@ name: Build samples
 on:   
   push:
     branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+    
 jobs:
   build_latex:
     runs-on: ubuntu-latest
@@ -12,19 +15,10 @@ jobs:
       - name: Compile LaTeX document
         uses: xu-cheng/latex-action@v2
         with:
-          working_directory: /
-          root_file: [ "*.tex" ]
+          root_file: sample.tex
 
       - name: Upload PDF file to GitHub Action
         uses: actions/upload-artifact@v3
         with:
-          name: Sample resumes
+          name: Sample resume
           path: sample.pdf
-
-      - name: Push to another branch
-        run: |
-          git fetch origin samples:samples
-          git checkout samples
-          git add *.pdf
-          git commit -m 'Updated the samples'
-          git push
