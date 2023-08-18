@@ -225,8 +225,8 @@
     \newcommand{\awards}{\cvsection{\textAwards}}
     \newcommand{\publications}{\cvsection{\textPublications}}
 
-    \newcommand{\cvbullet}[1]{\indent \textbullet\ #1\par}
-    \newcommand{\cvsubbullet}[1]{\indent \indent \textopenbullet\ #1\par}
+    \newcommand{\cvbullet}[1]{\indent \textbullet\ \parbox[t]{0.957\textwidth}{#1}  \par \par}
+    \newcommand{\cvsubbullet}[1]{\indent \indent \textopenbullet\ \parbox[t]{0.914\textwidth}{#1}\par}
 
     \newcommand{\thesis}[2]{\cvbullet{\textThesis: \emph{#1}, \textSupervisor: #2}}
     \newcommand{\courses}[1]{\cvbullet{\textCourses: \emph{#1}}}
