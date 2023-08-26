@@ -19,6 +19,11 @@
         \setlength\paperwidth{8.5in}
     }
 
+    \DeclareOption{caps}
+    {
+        \renewcommand{\cvsectionsize}[1]{\normalsize{\MakeUppercase{#1}}}
+    }
+
     \DeclareOption{lowerline}
     {
         \renewcommand{\sectionline}{\vspace*{-0.35cm}\hrule\vspace*{0.15cm}}
@@ -37,7 +42,6 @@
 % Language-dependent options
     \DeclareOption{english}
     {
-        \newcommand{\cvsectionsize}[1]{\large{#1}}
         \newcommand{\textEducation}{Education}
         \newcommand{\textExperience}{Professional Experience}
         \newcommand{\textLeadership}{Leadership}
@@ -51,79 +55,40 @@
         \newcommand{\textCourses}{Courses}
     }
 
-    \DeclareOption{englishcaps}
-    {
-        \renewcommand{\cvsectionsize}[1]{\normalsize{#1}}
-        \renewcommand{\textEducation}{EDUCATION}
-        \renewcommand{\textExperience}{PROFESSIONAL EXPERIENCE}
-        \renewcommand{\textLeadership}{LEADERSHIP}
-        \renewcommand{\textProjects}{PROJECTS}
-        \renewcommand{\textSkills}{SKILLS}
-        \renewcommand{\textAwards}{AWARDS \& HONOURS}
-        \renewcommand{\textPublications}{PUBLICATIONS}
-
-        \renewcommand{\textThesis}{Thesis}
-        \renewcommand{\textSupervisor}{Supervisor}
-        \renewcommand{\textCourses}{Courses}
-    }
-
     \DeclareOption{russian}
     {
-        \renewcommand{\textEducation}{Образование}
-        \renewcommand{\textExperience}{Профессиональный опыт}
-        \renewcommand{\textLeadership}{Лидерский опыт}
-        \renewcommand{\textProjects}{Личные проекты}
-        \renewcommand{\textSkills}{Навыки}
-        \renewcommand{\textAwards}{Награды и почести}
-        \renewcommand{\textPublications}{Научные публикации}
+        \newcommand{\textEducation}{Образование}
+        \newcommand{\textExperience}{Профессиональный опыт}
+        \newcommand{\textLeadership}{Лидерский опыт}
+        \newcommand{\textProjects}{Личные проекты}
+        \newcommand{\textSkills}{Навыки}
+        \newcommand{\textAwards}{Награды и почести}
+        \newcommand{\textPublications}{Научные публикации}
 
-        \renewcommand{\textThesis}{Дипломная работа}
-        \renewcommand{\textSupervisor}{Дипломный руководитель}
-        \renewcommand{\textCourses}{Курсы}
+        \newcommand{\textThesis}{Дипломная работа}
+        \newcommand{\textSupervisor}{Дипломный руководитель}
+        \newcommand{\textCourses}{Курсы}
     }
 
     \DeclareOption{german}
     {
-        \renewcommand{\textEducation}{Ausbildung}
-        \renewcommand{\textExperience}{Erfahrung}
-        \renewcommand{\textLeadership}{Führung}
-        \renewcommand{\textProjects}{Projekte}
-        \renewcommand{\textSkills}{Fähigkeiten}
-        \renewcommand{\textAwards}{Auszeichnungen und Ehrungen}
-        \renewcommand{\textPublications}{Wissenschaftliche Veröffentlichungen}
+        \newcommand{\textEducation}{Ausbildung}
+        \newcommand{\textExperience}{Erfahrung}
+        \newcommand{\textLeadership}{Führung}
+        \newcommand{\textProjects}{Projekte}
+        \newcommand{\textSkills}{Fähigkeiten}
+        \newcommand{\textAwards}{Auszeichnungen und Ehrungen}
+        \newcommand{\textPublications}{Wissenschaftliche Veröffentlichungen}
 
-        \renewcommand{\textThesis}{Thesis}
-        \renewcommand{\textSupervisor}{Supervisor}
-        \renewcommand{\textCourses}{Courses}
+        \newcommand{\textThesis}{Thesis}
+        \newcommand{\textSupervisor}{Supervisor}
+        \newcommand{\textCourses}{Courses}
     }
 
     \DeclareOption{french}
     {
-        \renewcommand{\textEducation}{Education}
-        \renewcommand{\textExperience}{Experience}
-        \renewcommand{\textLeadership}{Leadership}
-        \renewcommand{\textProjects}{Projects}
-        \renewcommand{\textSkills}{Skills}
-        \renewcommand{\textAwards}{Awards \& Honors}
-        \renewcommand{\textPublications}{Publications}
-
-        \renewcommand{\textThesis}{Thesis}
-        \renewcommand{\textSupervisor}{Supervisor}
-        \renewcommand{\textCourses}{Courses}
-    }
-
-    \DeclareOption{caps}
-    {
-        \renewcommand{\cvsectionsize}[1]{\normalsize{#1}}
-    }
-
-
-% Default Options
-    \DeclareOption{defaultoptions}
-    {
-        \newcommand{\cvsectionsize}[1]{\large{#1}}
         \newcommand{\textEducation}{Education}
-        \newcommand{\textExperience}{Professional Experience}
+        \newcommand{\textExperience}{Experience}
         \newcommand{\textLeadership}{Leadership}
         \newcommand{\textProjects}{Projects}
         \newcommand{\textSkills}{Skills}
@@ -133,7 +98,12 @@
         \newcommand{\textThesis}{Thesis}
         \newcommand{\textSupervisor}{Supervisor}
         \newcommand{\textCourses}{Courses}
+    }
 
+% Default Options
+    \DeclareOption{defaultoptions}
+    {
+        \newcommand{\cvsectionsize}[1]{\large{#1}}
         \newcommand{\sectionline}{\vspace*{-0.35cm}\hrule\vspace*{0.15cm}}
     }
     \ExecuteOptions{a4paper,defaultoptions}
@@ -159,6 +129,7 @@
     \RequirePackage{fontawesome5}
 
 % Misc
+    \RequirePackage[german,french,main=english]{babel}
     \RequirePackage{hyperref}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -222,7 +193,7 @@
     }
 
 % Section formatting
-    \newcommand{\cvsection}[1]{\section*{\cvsectionsize{#1}}\sectionline}
+    \newcommand{\cvsection}[1]{\vspace*{-0.2cm}\section*{\cvsectionsize{#1}}\sectionline}
 
     \newcommand{\education}{\cvsection{\textEducation}}
     \newcommand{\experience}{\cvsection{\textExperience}}
@@ -242,10 +213,11 @@
     {
         \noindent\begin{minipage}[t]{\textwidth}
             \par\vspace*{0.05cm}
-            \textbf{#3\ifstrempty{#4}{}{, #4}}\hfill\textbf{#2}\par\noindent\emph{#5\ifstrempty{#6}{}{, #6}}\ifstrempty{#7}{}{, #7}\hfill{#1}\ifstrempty{#8}{}{\par #8} 
+            \textbf{#3\ifstrempty{#4}{}{, #4}}\hfill\textbf{#2}\par
+            \noindent\emph{#5\ifstrempty{#6}{}{, #6}}\ifstrempty{#7}{}{, #7}\hfill{#1}\ifstrempty{#8}{}{\par #8} 
             \par\vspace*{0.05cm}
         \end{minipage}
-        \par
+        \par\vspace*{0.1cm}
     }
 
     \newcommand{\project}[6]{\cvblock{#1}{#2}{#3\ifstrempty{#6}{}{\separator\href{#6}{\faIcon{code}}}}{}{#4}{}{}{#5}}
