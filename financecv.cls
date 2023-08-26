@@ -112,6 +112,12 @@
         \renewcommand{\textCourses}{Courses}
     }
 
+    \DeclareOption{caps}
+    {
+        \renewcommand{\cvsectionsize}[1]{\normalsize{#1}}
+    }
+
+
 % Default Options
     \DeclareOption{defaultoptions}
     {
@@ -185,37 +191,38 @@
     \renewcommand{\maketitle}
     {
         \begin{center}
-            \huge{
-                \textbf{\@name}
-            }
-
-            \small{           
-                \ifdefined\@address\vspace*{0.15cm}\faIcon{map-marker-alt}~\@address\fi
-
-                \ifdefined\@extrainfo\vspace*{0.1cm}\@extrainfo\fi
-                
-                \vspace*{0.1cm}   
-                \color{gray}
-                \faIcon{envelope}~\href{mailto:\@email}{\@email}
-                \ifdefined\@phone\separator\faIcon{phone}~\@phone\fi
-                \ifdefined\@homepage\separator\href{\@homepage}{\faIcon{globe}~\@homepage}\fi
-                \ifdefined\@linkedin\separator\href{http://www.linkedin.com/in/\@linkedin}{\faIcon{linkedin}~\@linkedin}\fi
-                \ifdefined\@github\separator\href{http://www.github.com/\@github}{\faIcon{github}~\@github}\fi 
-                \ifdefined\@gitlab\separator\href{http://www.gitlab.com/\@gitlab}{\faIcon{gitlab}~\@gitlab}\fi
-                \ifdefined\@dockerhub\separator\href{https://hub.docker.com/u/\@dockerhub}{\faIcon{docker}~\@dockerhub}\fi
-                \ifdefined\@researchgate\separator\href{https://www.researchgate.net/profile/\@researchgate}{\faIcon{researchgate}~\@researchgate}\fi
-                \ifdefined\@orcid\separator\href{http://www.orcid.org/\@orcid}{\faIcon{orcid}~\@orcid}\fi
-                \ifdefined\@kaggle\separator\href{http://www.kaggle.com/\@kaggle}{\faIcon{kaggle}~\@kaggle}\fi
-                \ifdefined\@facebook\separator\href{http://www.facebook.com/\@facebook}{\faIcon{facebook}~\@facebook}\fi
-                \ifdefined\@vk\separator\href{http://www.vk.com/\@vk}{\faIcon{vk}~\@vk}\fi
-                \ifdefined\@telegram\separator\href{http://www.t.me/\@telegram}{\faIcon{telegram}~\@telegram}\fi
-            }
+            \begin{minipage}[t]{0.75\textwidth}
+                \centering
+                \huge{
+                    \textbf{\@name}\par
+                }
+    
+                \small{           
+                    \ifdefined\@address\vspace*{0.05cm}\faIcon{map-marker-alt}~\@address\par\fi
+                    \ifdefined\@extrainfo\vspace*{0.05cm}\@extrainfo\par\fi
+                    
+                    \vspace*{0.05cm}   
+                    \faIcon{envelope}~\href{mailto:\@email}{\@email}
+                    \ifdefined\@phone\separator\faIcon{mobile}~\@phone\fi
+                    \ifdefined\@homepage\separator\href{\@homepage}{\faIcon{globe}~\@homepage}\fi
+                    \ifdefined\@linkedin\separator\href{http://www.linkedin.com/in/\@linkedin}{\faIcon{linkedin}~\@linkedin}\fi
+                    \ifdefined\@github\separator\href{http://www.github.com/\@github}{\faIcon{github-square}~\@github}\fi 
+                    \ifdefined\@gitlab\separator\href{http://www.gitlab.com/\@gitlab}{\faIcon{gitlab}~\@gitlab}\fi
+                    \ifdefined\@dockerhub\separator\href{https://hub.docker.com/u/\@dockerhub}{\faIcon{docker}~\@dockerhub}\fi
+                    \ifdefined\@researchgate\separator\href{https://www.researchgate.net/profile/\@researchgate}{\faIcon{researchgate}~\@researchgate}\fi
+                    \ifdefined\@orcid\separator\href{http://www.orcid.org/\@orcid}{\faIcon{orcid}~\@orcid}\fi
+                    \ifdefined\@kaggle\separator\href{http://www.kaggle.com/\@kaggle}{\faIcon{kaggle}~\@kaggle}\fi
+                    \ifdefined\@facebook\separator\href{http://www.facebook.com/\@facebook}{\faIcon{facebook}~\@facebook}\fi
+                    \ifdefined\@vk\separator\href{http://www.vk.com/\@vk}{\faIcon{vk}~\@vk}\fi
+                    \ifdefined\@telegram\separator\href{http://www.t.me/\@telegram}{\faIcon{telegram}~\@telegram}\fi
+                }
+            \end{minipage}
         \end{center}
+
     }
 
 % Section formatting
     \newcommand{\cvsection}[1]{\section*{\cvsectionsize{#1}}\sectionline}
-    \newcommand{\cvsubsection}[1]{\subsection*{#1}}
 
     \newcommand{\education}{\cvsection{\textEducation}}
     \newcommand{\experience}{\cvsection{\textExperience}}
@@ -225,23 +232,30 @@
     \newcommand{\awards}{\cvsection{\textAwards}}
     \newcommand{\publications}{\cvsection{\textPublications}}
 
-    \newcommand{\cvbullet}[1]{\indent \textbullet\ \parbox[t]{0.957\textwidth}{#1}  \par \par}
-    \newcommand{\cvsubbullet}[1]{\indent \indent \textopenbullet\ \parbox[t]{0.914\textwidth}{#1}\par}
+    \newcommand{\cvbullet}[1]{\quad\textbullet\ \ \parbox[t]{0.957\textwidth}{#1}\par}
+    \newcommand{\cvsubbullet}[1]{\quad\quad\textopenbullet\ \ \parbox[t]{0.914\textwidth}{#1}\par}
 
     \newcommand{\thesis}[2]{\cvbullet{\textThesis: \emph{#1}, \textSupervisor: #2}}
     \newcommand{\courses}[1]{\cvbullet{\textCourses: \emph{#1}}}
 
     \newcommand{\cvblock}[8]
     {
-        \noindent\textbf{#3\ifstrempty{#4}{}{, #4}} \hfill \textbf{#2} \newline
-        \noindent\emph{#5\ifstrempty{#6}{}{, #6}}\ifstrempty{#7}{}{, #7} \hfill {#1}
-        \ifstrempty{#8}{}{\newline #8} 
-        \vskip 0.2cm
+        \noindent\begin{minipage}[t]{\textwidth}
+            \par\vspace*{0.05cm}
+            \textbf{#3\ifstrempty{#4}{}{, #4}}\hfill\textbf{#2}\par\noindent\emph{#5\ifstrempty{#6}{}{, #6}}\ifstrempty{#7}{}{, #7}\hfill{#1}\ifstrempty{#8}{}{\par #8} 
+            \par\vspace*{0.05cm}
+        \end{minipage}
+        \par
     }
 
-    \newcommand{\project}[6]{\cvblock{#1}{#2}{`#3'\ifstrempty{#6}{}\separator\href{#6}{\faIcon{github}}}{}{#4}{}{}{#5}}
-    \newcommand{\skillgroup}[2]{\noindent\textbf{#1}: #2 \par{}}
-    \newcommand{\award}[3]{\noindent\textbf{#1}\ifstrempty{#2}{}{: \emph{#2}} \hfill {#3}\par{}}
+    \newcommand{\project}[6]{\cvblock{#1}{#2}{#3\ifstrempty{#6}{}{\separator\href{#6}{\faIcon{code}}}}{}{#4}{}{}{#5}}
+    
+    \newcommand{\skillgroup}[2]{\noindent\begin{minipage}[t]{\textwidth}%
+                                \textbf{#1}: #2%
+                                \end{minipage}\par\vspace*{0.05cm}}
+    \newcommand{\award}[3]{\noindent\begin{minipage}[t]{\textwidth}%
+                           \textbf{#1}\ifstrempty{#2}{}{: \emph{#2}}\hfill#3%
+                           \end{minipage}\par\vspace*{0.05cm}}
 % Misc
     \newcommand{\separator}
     {
@@ -255,12 +269,12 @@
     \sbox\separatorbox{|}
     \newcommand{\link}[2]{\faIcon{link}\href{#1}{#2}}
 
-
-
-
 \AtBeginDocument{
     \maketitle
 }
 
 \pagestyle{empty}
-
+\hypersetup{
+    colorlinks=true,
+    urlcolor=black,
+}
