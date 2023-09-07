@@ -1,5 +1,5 @@
-# financial-cv
-LaTeX CV template for financial jobs
+# `financecv` LaTeX Package
+LaTeX CV template for jobs in Finance and IT
 
 | Example (caps) | Example (base) |
 | -- | -- |
