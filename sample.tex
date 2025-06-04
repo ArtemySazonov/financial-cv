@@ -1,92 +1,66 @@
 \documentclass[caps, english]{financecv}
 
-\name{John Doe}
+\name{Sample Name}
 \phone{+1 (123) 456 78-90}
-\email{johndoe@example.com}
+\email{sample@example.com}
 \address{Sample Address, Sample City, Sample Country}
 \homepage{www.example.com}
 
-\github{johndoe}
-\gitlab{johndoe}
-\dockerhub{johndoe}
+\github{sample}
+\gitlab{sample}
+\dockerhub{sample}
 
-\linkedin{johndoe}
+\linkedin{sample}
 
-\researchgate{johndoe}
-\orcid{johndoe}
+\researchgate{sample}
+\orcid{sample}
 
-\vk{johndoe}
-\telegram{johndoe}
-\facebook{johndoe}
+\vk{sample}
+\telegram{sample}
+\facebook{sample}
 
 \begin{document}
     \education
-        \cvblock{Sep 2012 -- Jun 2014}
-                {Sample City, Sample Country}
-                {Sample University}
-                {Sample Department}
-                {Master of Science}
-                {Sample Specialization}
-                {GPA: 5.0/5.0 (Graduated with Honours)}
-                {
-                    \thesis{Sample Thesis}{Sample Advisor;}
-                    \courses{Macroeconomics, Calculus, Statistics;}
-                    \cvbullet{Sample Bullet Point with a \link{https://www.example.com}{link}}
-                }
-        \cvblock{Sep 2008 -- Jun 2012}
-                {Sample City, Sample Country}
-                {Sample University}
-                {Sample Department}
-                {Bachelor of Science}
-                {Sample Specialization}
-                {GPA: 4.3/5.0}
-                {
-                    \thesis{Sample Thesis}{Sample Advisor;}
-                    \courses{Calculus, Statistics;}
-                    \cvbullet{Sample Bullet Point with a \link{https://www.example.com}{link}}
-                }
-
+        \cvjob{Sample City, Sample Country}
+            {Sample University}
+            {
+                \cvrole{Sep 2012 -- Jun 2014}{Master of Science, Sample Specialization (Sample Department)}
+            }
+            {
+                \cvbullet{GPA: 5.0/5.0 (Graduated with Honours). Thesis: Sample Thesis.}
+                \cvbullet{Sample Bullet Point with a \link{https://www.example.com}{link}}
+            }
+        \cvjob{Sample City, Sample Country}
+            {Sample University}
+            {
+                \cvrole{Sep 2008 -- Jun 2012}{Bachelor of Science, Sample Specialization (Sample Department)}
+            }
+            {
+                \cvbullet{GPA: 4.3/5.0; Thesis: Sample Thesis, Sample Advisor; Courses: Calculus, Statistics}
+                \cvbullet{Sample Bullet Point with a \link{https://www.example.com}{link}}
+            }
+    
     \experience
-        \cvblock{Sep 2014 -- Present}
-                {Sample City, Sample Country}
-                {Sample Bank}
-                {Sample Holding}
-                {Quantitative Researcher}
-                {Sample Desk}
-                {}
-                {
-                    \cvbullet{Sample Bullet Point with a \link{https://www.example.com}{link}}
-                        \cvsubbullet{Sample subbullet 1}
-                        \cvsubbullet{Sample subbullet 2}
-                    \cvbullet{Sample Bullet Point with a \link{https://www.example.com}{link}}
-                    \cvbullet{Sample Bullet Point with a \link{https://www.example.com}{link}}
-                }
-        \cvblock{Sep 2013 -- Sep 2014}
-                {Sample City, Sample Country}
-                {Sample Bank}
-                {Sample Holding}
-                {Quantitative Research Intern}
-                {Sample Desk}
-                {}
-                {
-                    \cvbullet{Sample Bullet Point with a \link{https://www.example.com}{link}}
-                    \cvbullet{Sample Bullet Point with a \link{https://www.example.com}{link}}
-                    \cvbullet{Sample Bullet Point with a \link{https://www.example.com}{link}}
-                }
-
-        \cvblock{Sep 2010 -- May 2012}
-                {Sample City, Sample Country}
-                {Sample Firm}
-                {}
-                {Junior Data Scientist}
-                {Sample Project}
-                {}
-                {
-                    \cvbullet{Sample Bullet Point with a \link{https://www.example.com}{link}}
-                    \cvbullet{Sample Bullet Point with a \link{https://www.example.com}{link}}
-                    \cvbullet{Sample Bullet Point with a \link{https://www.example.com}{link}}
-                }
-
+        \cvjob{Sample City, Sample Country}
+            {Sample Bank (Sample Holding)}
+            {
+                \cvrole{Sep 2014 -- Present}{Quantitative Researcher (Sample Desk)}
+                \cvrole{Sep 2013 -- Sep 2014}{Quantitative Research Intern (Sample Desk)}
+            }
+            {
+                \cvbullet{Sample Bullet Point with a \link{https://www.example.com}{link}}
+                \cvbullet{Sample Bullet Point with a \link{https://www.example.com}{link}}
+            }
+        \cvjob{Sample City, Sample Country}
+            {Sample Firm}
+            {
+                \cvrole{Sep 2010 -- May 2012}{Junior Data Scientist (Sample Project)}
+            }
+            {
+                \cvbullet{Sample Bullet Point with a \link{https://www.example.com}{link}}
+                \cvbullet{Sample Bullet Point with a \link{https://www.example.com}{link}}
+            }
+    
     \projects
         \project{Sep 2013 -- Present}
                 {Sample City, Sample Country}
@@ -95,18 +69,15 @@
                 {
                     \cvbullet{Sample Bullet Point with a \link{https://www.example.com}{link}}
                     \cvbullet{Sample Bullet Point with a \link{https://www.example.com}{link}}
-                    \cvbullet{Sample Bullet Point with a \link{https://www.example.com}{link}}
                 }
-                {
-                    https://github.com/mojombo/grit
-                }
-
+                {https://github.com/sample/grit}
+    
     \skills
         \skillgroup{Data Science}{Python, R, Microsoft Excel;}
         \skillgroup{High-performance systems}{C++, Rust, C\#, Java, x86 Assembly Language;}
         \skillgroup{Developer Tools and Misc}{Git, Bash, GitHub Actions;}
         \skillgroup{Languages}{Language 1 (native), Language 2 (native), Language 3 (advanced).}
-
+    
     \awards
         \award{CQF}{a prestigious qualification for quant finance professionals}{Feb 2019}
         \award{CFA Level 2}{credential that signifies expertise in investment analysis and portfolio management}{Jun 2013}
