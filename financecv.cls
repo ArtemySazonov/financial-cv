@@ -22,7 +22,7 @@
 \fi
 
 \RequirePackage{titlesec}
-\RequirePackage{enumitem}
+
 \RequirePackage{etoolbox}
 \RequirePackage{fontawesome5}
 \RequirePackage{ragged2e}
@@ -204,8 +204,6 @@
   \cleaders\copy\separatorbox\hskip\wd\separatorbox
   \hskip 2mm plus 1mm minus 1mm\ignorespaces}%
 }
-
-\setlist[itemize]{nosep, topsep=0pt, partopsep=0pt, parsep=0pt, leftmargin=*, labelsep=0.5em}
 
 \AtBeginDocument{%
   \ifx\@name\@empty\ClassWarning{financecv}{\string\name{} is not set}\fi
