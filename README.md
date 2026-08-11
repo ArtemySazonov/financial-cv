@@ -1,3 +1,5 @@
+
+
 # `financecv` LaTeX Package
 The `financecv.cls` package is designed for creating a sleek, professional curriculum vitae tailored to financial and academic profiles. It offers a simple interface to structure your résumé into clear sections like education, professional experience, projects, and more. This documentation explains how to use the package, including details on available commands and customization options.
 
@@ -73,7 +75,7 @@ The `\cvjob` command is used to list education or work experience. Its syntax is
   
   ### Role Descriptions with `\cvrole`
   
-  Use `\cvrole{Date Start}{Date End (Optional, replaced with <Since Date Start> if empty)}{Role Title}` to format a specific role or position within a job entry. Multiple `\cvrole` commands can be stacked if necessary.
+  Use `\cvrole{Date Start}{Date End}{Role Title}` to format a specific role or position within a job entry. The `Date End` argument is optional; if omitted, it defaults to "Since [Date Start]". Multiple `\cvrole` commands can be stacked if necessary.
   
   ### Bullet Points with `\cvbullet`
   
